@@ -68,13 +68,14 @@ describe('Simplified-Chinese UI overlay', () => {
   });
 
   it('translates status labels split into separate React text nodes', () => {
-    document.body.innerHTML = '<span><i>Status: </i><b>CLOSED</b></span><span>OPENED</span><span>CLOSED_BUT_WILL_REOPEN</span>';
+    document.body.innerHTML = '<span><i>Status: </i><b>CLOSED</b></span><span>OPENED</span><span>CLOSED_BUT_WILL_REOPEN</span><span>RTT NOT CONN</span>';
     installLocalization();
 
     expect(document.querySelector('i')?.textContent).toBe('状态： ');
     expect(document.querySelector('b')?.textContent).toBe('已关闭');
     expect(document.querySelectorAll('span')[1]?.textContent).toBe('已打开');
     expect(document.querySelectorAll('span')[2]?.textContent).toBe('已关闭（等待重连）');
+    expect(document.querySelectorAll('span')[3]?.textContent).toBe('RTT 未连接');
   });
 
   it('translates default session names and multiline JSX paragraphs', () => {
@@ -131,6 +132,7 @@ describe('Simplified-Chinese UI overlay', () => {
       <span>Separate TX/RX terminals</span>
       <span>Socket Connection Settings</span>
       <span>First detected serial protocol</span>
+      <span>no device</span>
       <span>Found J-Link Commander at C:\\SEGGER\\JLink.exe</span>`;
     installLocalization();
 
@@ -138,6 +140,7 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(labels[0]?.textContent).toBe('分离发送/接收终端');
     expect(labels[1]?.textContent).toBe('网络套接字连接设置');
     expect(labels[2]?.textContent).toBe('首个检测到的串行协议');
-    expect(labels[3]?.textContent).toBe('已找到 J-Link Commander：C:\\SEGGER\\JLink.exe');
+    expect(labels[3]?.textContent).toBe('未选择器件');
+    expect(labels[4]?.textContent).toBe('已找到 J-Link Commander：C:\\SEGGER\\JLink.exe');
   });
 });
