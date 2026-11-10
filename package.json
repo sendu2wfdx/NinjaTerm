@@ -1,8 +1,8 @@
 {
   "name": "ninjaterm",
-  "productName": "NinjaTerm",
-  "version": "5.19.0",
-  "description": "A modern, powerful serial terminal for developers and engineers.",
+  "productName": "NinjaTerm 中文版",
+  "version": "5.19.0-zh.1",
+  "description": "NinjaTerm 简体中文社区版，面向嵌入式开发者的现代终端。",
   "author": {
     "name": "Geoffrey Hunter",
     "email": "gbmhunter@gmail.com"
@@ -10,7 +10,7 @@
   "homepage": "https://ninjaterm.mbedded.ninja/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gbmhunter/NinjaTerm.git"
+    "url": "https://github.com/sendu2wfdx/NinjaTerm.git"
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-26",
@@ -135,8 +135,8 @@
     "vitest": "^3.2.4"
   },
   "build": {
-    "appId": "com.ninjaterm.app",
-    "productName": "NinjaTerm",
+    "appId": "io.github.sendu2wfdx.ninjaterm.zhcn",
+    "productName": "NinjaTerm 中文版",
     "directories": {
       "output": "dist"
     },
@@ -156,7 +156,7 @@
         }
       ],
       "icon": "img/logo/v3/logo512.png",
-      "artifactName": "${productName}-Setup-${version}-${arch}.${ext}"
+      "artifactName": "NinjaTerm-ZH-CN-Setup-${version}-${arch}.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -216,10 +216,22 @@
     },
     "publish": {
       "provider": "github",
-      "owner": "gbmhunter",
+      "owner": "sendu2wfdx",
       "repo": "NinjaTerm",
       "releaseType": "draft"
     }
   },
-  "type": "module"
+  "type": "module",
+  "allowScripts": {
+    "electron@38.3.0": true,
+    "esbuild@0.25.5": true,
+    "koffi@2.16.1": true,
+    "@serialport/bindings-cpp@13.0.0": true,
+    "@abandonware/noble@1.9.2-26": true,
+    "@abandonware/bluetooth-hci-socket@0.5.3-12": true,
+    "usb@2.16.0": true,
+    "electron-winstaller@5.4.0": true,
+    "playwright-electron@0.5.0": true,
+    "core-js@3.45.0": true
+  }
 }

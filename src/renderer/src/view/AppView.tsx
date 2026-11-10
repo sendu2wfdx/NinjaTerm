@@ -8,6 +8,7 @@ import TimelineIcon from '@mui/icons-material/Timeline';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import TranslateIcon from '@mui/icons-material/Translate';
 import CssBaseline from '@mui/material/CssBaseline';
 import { SnackbarProvider } from 'notistack';
 
@@ -29,6 +30,7 @@ import { SelectionController } from '../model/SelectionController/SelectionContr
 import 'src/model/WindowTypes';
 
 import { SettingsCategories } from 'src/model/Settings/Settings';
+import { toggleUiLanguage } from 'src/i18n/zhCN';
 
 // Create dark theme for MUI
 const darkTheme = createTheme({
@@ -422,6 +424,16 @@ const AppView = observer(() => {
           {/* marginTop: auto pushes Help to the bottom of the sidebar, away from
               the pane-switching buttons — it opens the external manual rather
               than switching panes. */}
+          <Tooltip {...app.settings.displaySettings.getBasicTooltipConfig()} title="Switch language / 切换语言" placement="right">
+            <IconButton
+              onClick={toggleUiLanguage}
+              color="primary"
+              data-testid="language-toggle-button"
+              sx={{ marginTop: 'auto' }}
+            >
+              <TranslateIcon />
+            </IconButton>
+          </Tooltip>
           <Tooltip {...app.settings.displaySettings.getBasicTooltipConfig()} title="Open the NinjaTerm manual in your browser." placement="right">
             <IconButton
               onClick={async () => {
@@ -433,7 +445,7 @@ const AppView = observer(() => {
               }}
               color="primary"
               data-testid="show-help-button"
-              sx={{ marginTop: 'auto' }}
+              sx={{ marginTop: '4px' }}
             >
               <HelpOutlineIcon />
             </IconButton>

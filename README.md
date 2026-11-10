@@ -1,5 +1,11 @@
 <p align="center"><img src="img/logo/v3/github-readme-logo.png" alt="The NinjaTerm logo." height="200px"></p>
 
+<p align="center"><strong><a href="README.zh-CN.md">简体中文说明</a></strong></p>
+
+> This fork provides a Simplified-Chinese desktop UI. It defaults to Chinese
+> and includes an in-app Chinese/English switch. Terminal data is never
+> translated. See [README.zh-CN.md](README.zh-CN.md) for downloads and details.
+
 #### An embedded developer's terminal that's got your back.
 
 <br>

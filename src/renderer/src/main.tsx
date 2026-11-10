@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import AppView from './view/AppView';
+import { installLocalization } from './i18n/zhCN';
+
+installLocalization();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
