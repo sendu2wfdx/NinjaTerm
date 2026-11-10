@@ -1,7 +1,7 @@
 {
   "name": "ninjaterm",
   "productName": "NinjaTerm 中文版",
-  "version": "5.19.0-zh.6",
+  "version": "5.19.0-zh.7",
   "description": "NinjaTerm 简体中文社区版，面向嵌入式开发者的现代终端。",
   "author": {
     "name": "Geoffrey Hunter",

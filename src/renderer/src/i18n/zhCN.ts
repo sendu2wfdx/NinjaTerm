@@ -607,6 +607,75 @@ const zhCN: Record<string, string> = {
   'Open or close the RTT connection. Spawns J-Link Commander on open.': '打开或关闭 RTT 连接；打开时会启动 J-Link Commander。',
   'J-Link Commander output': 'J-Link Commander 输出',
   '(no output yet — open the RTT connection to populate this)': '（暂无输出——打开 RTT 连接后将在此显示）',
+  'No target device specified.': '未指定目标器件。',
+  'No RTT target device specified. Set the device (e.g. nRF52832_xxAA) in Connection Settings.': '未指定 RTT 目标器件，请在连接设置中选择或输入器件名称。',
+  'An RTT session is already open. Disconnect first.': '已有 RTT 会话处于打开状态，请先断开。',
+  'J-Link install not found. Install SEGGER J-Link software or set the path explicitly.': '未找到 J-Link 安装目录，请安装 SEGGER J-Link 软件或手动设置路径。',
+  'No matching RTT session.': '未找到匹配的 RTT 会话。',
+  'RTT session is closing.': 'RTT 会话正在关闭。',
+  'No emulator (probe) connected on USB.': 'USB 上未连接 J-Link 仿真器（探针）。',
+  'No emulator (probe) connected on USB': 'USB 上未连接 J-Link 仿真器（探针）',
+  'No emulator (probe) connected': '未连接 J-Link 仿真器（探针）',
+  'Unspecified error': '未指定错误',
+  'Unspecified error.': '未指定错误。',
+  'Connection error': '连接错误',
+  'Connection error.': '连接错误。',
+  'Unknown device': '未知器件',
+  'Unknown device.': '未知器件。',
+  'Memory error': '存储器错误',
+  'Memory error.': '存储器错误。',
+  'No CPU found': '未发现 CPU',
+  'No CPU found.': '未发现 CPU。',
+  'Too many breakpoints': '断点数量过多',
+  'Too many breakpoints.': '断点数量过多。',
+  'Connect to target failed': '连接目标失败',
+  'Connect to target failed.': '连接目标失败。',
+  'RTT disconnected.': 'RTT 已断开。',
+
+  // Runtime notifications and snackbar banners
+  'The last session cannot be closed.': '无法关闭最后一个会话。',
+  'Auto-updater not available in this version.': '此版本不支持自动更新。',
+  'Checking for updates...': '正在检查更新…',
+  'Restart & Install': '重启并安装',
+  'Developer tools not available in this version.': '此版本不提供开发者工具。',
+  'Developer tools opened': '开发者工具已打开',
+  'Bluetooth scan started...': '正在扫描蓝牙设备…',
+  'Bluetooth scan finished.': '蓝牙设备扫描已完成。',
+  'No Bluetooth device selected. Please select a device from the Bluetooth Settings.': '未选择蓝牙设备，请先在蓝牙设置中选择设备。',
+  'No Bluetooth device selected (this.selectedBluetoothDevice is null) even though the connection attempt was successful.': '连接尝试虽已成功，但当前没有选中的蓝牙设备。',
+  'Bluetooth connection success message was not returned from the main process.': '主进程未返回蓝牙连接成功信息。',
+  'Services information was not returned from the main process.': '主进程未返回蓝牙服务信息。',
+  'Manual UUIDs not specified. Please enter Service, RX, and TX UUIDs.': '尚未指定手动 UUID，请填写服务、接收和发送 UUID。',
+  'Correct service and characteristic UUIDs were not found on connected Bluetooth device.': '在已连接的蓝牙设备上未找到所需的服务和特征 UUID。',
+  'No Bluetooth device connected. Cannot send data.': '未连接蓝牙设备，无法发送数据。',
+  'Bluetooth device connected.': '蓝牙设备已连接。',
+  'Bluetooth device disconnected.': '蓝牙设备已断开。',
+  'Automatically reconnected to Bluetooth device.': '已自动重新连接蓝牙设备。',
+  'No serial port selected. Please select a port from the Port Settings.': '未选择串口，请先在串口设置中选择端口。',
+  'Invalid socket host or port. Please check the Connection Configuration.': '网络套接字的主机或端口无效，请检查连接配置。',
+  'Fake serial port opened.': '模拟串口已打开。',
+  'Fake serial port closed.': '模拟串口已关闭。',
+  'Fake port opened.': '模拟端口已打开。',
+  'Fake port closed.': '模拟端口已关闭。',
+  'Fake port reopened.': '模拟端口已重新打开。',
+  'Serial port opened.': '串口已打开。',
+  'Serial port closed.': '串口已关闭。',
+  'Socket disconnected.': '网络套接字已断开。',
+  'Graphing receive buffer overflowed. Clearing buffer.': '绘图接收缓冲区已溢出，正在清空缓冲区。',
+  'Unknown graph command prefix': '未知的图表命令前缀',
+  'GPH:ADD_FIG requires id parameter': 'GPH:ADD_FIG 需要 id 参数',
+  'GPH:DEL_FIG requires fig parameter': 'GPH:DEL_FIG 需要 fig 参数',
+  'GPH:CLR_FIG requires fig parameter': 'GPH:CLR_FIG 需要 fig 参数',
+  'GPH:DEL_TRACE requires trace parameter': 'GPH:DEL_TRACE 需要 trace 参数',
+  'GPH:ADD_TRACE requires fig and id parameters': 'GPH:ADD_TRACE 需要 fig 和 id 参数',
+  'GPH:ADD_DATA requires trace and data parameters': 'GPH:ADD_DATA 需要 trace 和 data 参数',
+  'Break signal not yet implemented in Electron version.': 'Electron 版本暂未实现 Break 信号。',
+  'Cannot send, the connection is not open.': '连接尚未打开，无法发送。',
+  'Settings restored.': '设置已恢复。',
+  'Failed to scan for serial ports.': '扫描串口失败。',
+  'Serial port re-opened with new settings.': '串口已使用新设置重新打开。',
+  'Copied to clipboard': '已复制到剪贴板',
+  'Failed to copy to clipboard': '复制到剪贴板失败',
 
   'Bluetooth LE Serial Protocol': '低功耗蓝牙串行协议',
   'Bluetooth Protocol': '蓝牙协议',
@@ -766,8 +835,239 @@ function translated(value: string): string {
   }
 
   if (replacement === undefined) {
+    const performanceFailure = core.match(/^Error running performance tests:\s*(.+)$/s);
+    if (performanceFailure) replacement = `运行性能测试失败：${translated(performanceFailure[1])}`;
+  }
+
+  if (replacement === undefined) {
     const foundJLink = core.match(/^Found J-Link Commander at (.+)$/);
     if (foundJLink) replacement = `已找到 J-Link Commander：${foundJLink[1]}`;
+  }
+
+  // Connection snackbars combine a generic prefix with a backend-specific
+  // message. Translate the nested RTT/J-Link error as well as the prefix.
+  if (replacement === undefined) {
+    const openError = core.match(/^Error opening connection:\s*(.+)$/s);
+    if (openError) replacement = `打开连接失败：${translated(openError[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const probeMissing = core.match(/^J-Link probe not found while attempting to attach to "(.+)"\.\s*(.+)$/s);
+    if (probeMissing) replacement = `连接目标“${probeMissing[1]}”时未找到 J-Link 探针：${translated(probeMissing[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const probeSerial = core.match(/^Could not select probe with S\/N (.+?):\s*(.+)$/s);
+    if (probeSerial) replacement = `无法选择序列号为 ${probeSerial[1]} 的 J-Link 探针：${translated(probeSerial[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const unknownTarget = core.match(/^Unknown target device "(.+)"\. J-Link does not recognise this name\. Check the "Target device" field in Connection Settings\.$/);
+    if (unknownTarget) replacement = `未知目标器件“${unknownTarget[1]}”。J-Link 无法识别该名称，请检查连接设置中的“目标器件”。`;
+  }
+
+  if (replacement === undefined) {
+    const setDevice = core.match(/^Setting device to "(.+)" failed:\s*(.+)$/s);
+    if (setDevice) replacement = `设置目标器件“${setDevice[1]}”失败：${translated(setDevice[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const selectInterface = core.match(/^Failed to select interface (.+?):\s*(.+)$/s);
+    if (selectInterface) replacement = `选择调试接口 ${selectInterface[1]} 失败：${translated(selectInterface[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const attachTarget = core.match(/^Failed to attach to target "(.+)":\s*(.+)$/s);
+    if (attachTarget) replacement = `连接目标“${attachTarget[1]}”失败：${translated(attachTarget[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const startRtt = core.match(/^Failed to start RTT:\s*(.+)$/s);
+    if (startRtt) replacement = `启动 RTT 失败：${translated(startRtt[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const commanderMissing = core.match(/^J-Link Commander not found at "(.+)"\. Click Locate to auto-detect or Browse to pick a different file\.$/);
+    if (commanderMissing) replacement = `在“${commanderMissing[1]}”未找到 J-Link Commander。请单击“自动查找”，或使用“浏览”选择其他文件。`;
+  }
+
+  if (replacement === undefined) {
+    const rttWrite = core.match(/^RTT write failed:\s*(.+)$/s);
+    if (rttWrite) replacement = `RTT 写入失败：${translated(rttWrite[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const partialWrite = core.match(/^Partial RTT write \((\d+)\/(\d+) bytes\) — target down-buffer is full\.$/);
+    if (partialWrite) replacement = `RTT 仅写入 ${partialWrite[1]}/${partialWrite[2]} 字节——目标下行缓冲区已满。`;
+  }
+
+  if (replacement === undefined) {
+    const rttError = core.match(/^RTT error:\s*(.+)$/s);
+    if (rttError) replacement = `RTT 错误：${translated(rttError[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const probeDisconnected = core.match(/^J-Link probe disconnected \(cable unplugged\?\)\. Was attached to "(.+)"\.$/);
+    if (probeDisconnected) replacement = `J-Link 探针已断开（线缆是否被拔出？），此前连接的目标为“${probeDisconnected[1]}”。`;
+  }
+
+  if (replacement === undefined) {
+    const rttConnected = core.match(/^RTT connected \((.+)\)\.$/);
+    if (rttConnected) replacement = `RTT 已连接（${rttConnected[1]}）。`;
+  }
+
+  if (replacement === undefined) {
+    const rttReconnected = core.match(/^Automatically reconnected RTT to "(.+)"\.$/);
+    if (rttReconnected) replacement = `已自动重新连接 RTT 目标“${rttReconnected[1]}”。`;
+  }
+
+  if (replacement === undefined) {
+    const downloadedUpdate = core.match(/^Update v(.+) has been downloaded\. Restart NinjaTerm to install\.$/);
+    if (downloadedUpdate) replacement = `版本 v${downloadedUpdate[1]} 已下载，重启 NinjaTerm 即可安装。`;
+  }
+
+  if (replacement === undefined) {
+    const updateFailure = core.match(/^Update check failed:\s*(.+)$/s);
+    if (updateFailure) replacement = `检查更新失败：${translated(updateFailure[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const developerToolsFailure = core.match(/^Failed to (open|close|toggle) developer tools:\s*(.+)$/s);
+    if (developerToolsFailure) {
+      const actions: Record<string, string> = { open: '打开', close: '关闭', toggle: '切换' };
+      replacement = `${actions[developerToolsFailure[1]]}开发者工具失败：${translated(developerToolsFailure[2])}`;
+    }
+  }
+
+  if (replacement === undefined) {
+    const developerToolsAction = core.match(/^Developer tools (opened|closed)$/);
+    if (developerToolsAction) replacement = `开发者工具已${developerToolsAction[1] === 'opened' ? '打开' : '关闭'}`;
+  }
+
+  if (replacement === undefined) {
+    const installUpdateFailure = core.match(/^Failed to install update:\s*(.+)$/s);
+    if (installUpdateFailure) replacement = `安装更新失败：${translated(installUpdateFailure[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const serialError = core.match(/^Serial port error:\s*(.+)$/s);
+    if (serialError) replacement = `串口错误：${translated(serialError[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const socketError = core.match(/^Socket error:\s*(.+)$/s);
+    if (socketError) replacement = `网络套接字错误：${translated(socketError[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const serialReconnect = core.match(/^Automatically reconnected to port:\s*(.+)$/s);
+    if (serialReconnect) replacement = `已自动重新连接串口：${serialReconnect[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const socketConnected = core.match(/^Socket connected to (.+):(\d+)\.$/);
+    if (socketConnected) replacement = `已连接网络套接字 ${socketConnected[1]}:${socketConnected[2]}。`;
+  }
+
+  if (replacement === undefined) {
+    const socketReconnect = core.match(/^Automatically reconnected to socket:\s*(.+):(\d+)$/);
+    if (socketReconnect) replacement = `已自动重新连接网络套接字：${socketReconnect[1]}:${socketReconnect[2]}`;
+  }
+
+  if (replacement === undefined) {
+    const bluetoothFailure = core.match(/^Failed to (start|stop) Bluetooth scan\. Error:\s*(.+)\.$/s);
+    if (bluetoothFailure) replacement = `${bluetoothFailure[1] === 'start' ? '启动' : '停止'}蓝牙扫描失败：${translated(bluetoothFailure[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const bluetoothConnectFailure = core.match(/^Failed to (start connection attempt to|connect to|disconnect from) Bluetooth device\. Error:\s*(.+)\.$/s);
+    if (bluetoothConnectFailure) {
+      const actions: Record<string, string> = {
+        'start connection attempt to': '开始连接',
+        'connect to': '连接',
+        'disconnect from': '断开',
+      };
+      replacement = `${actions[bluetoothConnectFailure[1]]}蓝牙设备失败：${translated(bluetoothConnectFailure[2])}`;
+    }
+  }
+
+  if (replacement === undefined) {
+    const bluetoothSetupFailure = core.match(/^Failed to setup read and write on connected Bluetooth device\. Error:\s*(.+)\.$/s);
+    if (bluetoothSetupFailure) replacement = `配置蓝牙设备读写失败：${translated(bluetoothSetupFailure[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const bluetoothConnected = core.match(/^Bluetooth device connected:\s*(.+) \((.+)\)\.$/s);
+    if (bluetoothConnected) replacement = `蓝牙设备已连接：${bluetoothConnected[1]}（${bluetoothConnected[2]}）。`;
+  }
+
+  if (replacement === undefined) {
+    const bluetoothDisconnected = core.match(/^Bluetooth device disconnected( unexpectedly)?:\s*(.+) \((.+)\)\.$/s);
+    if (bluetoothDisconnected) {
+      replacement = `蓝牙设备${bluetoothDisconnected[1] ? '意外' : '已'}断开：${bluetoothDisconnected[2]}（${bluetoothDisconnected[3]}）。`;
+    }
+  }
+
+  if (replacement === undefined) {
+    const writeFailure = core.match(/^(Failed to write to|Error writing to) log file:\s*(.+)$/s);
+    if (writeFailure) replacement = `写入日志文件失败：${translated(writeFailure[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const dataWriteFailure = core.match(/^Error writing data:\s*(.+)$/s);
+    if (dataWriteFailure) replacement = `写入数据失败：${translated(dataWriteFailure[1])}`;
+  }
+
+  if (replacement === undefined) {
+    const copiedChars = core.match(/^(\d+) chars copied to clipboard\.$/);
+    if (copiedChars) replacement = `已将 ${copiedChars[1]} 个字符复制到剪贴板。`;
+  }
+
+  if (replacement === undefined) {
+    const presetChanged = core.match(/^Preset "(.+)" (saved|updated)\.$/s);
+    if (presetChanged) replacement = `预设“${presetChanged[1]}”已${presetChanged[2] === 'saved' ? '保存' : '更新'}。`;
+  }
+
+  if (replacement === undefined) {
+    const presetDeleted = core.match(/^Deleted preset "(.+)"\.$/s);
+    if (presetDeleted) replacement = `预设“${presetDeleted[1]}”已删除。`;
+  }
+
+  if (replacement === undefined) {
+    const presetApplied = core.match(/^Applied the "(.+)" preset\.(?:\s*\nConnected to (.+)\.)?$/s);
+    if (presetApplied) {
+      replacement = `已应用预设“${presetApplied[1]}”。${presetApplied[2] ? `\n已连接到 ${presetApplied[2]}。` : ''}`;
+    }
+  }
+
+  if (replacement === undefined) {
+    const graphNaN = core.match(/^Graphing received NaN value for ([xy])-axis\. Skipping data point\. rxDataBuffer:\s*(.*)$/s);
+    if (graphNaN) replacement = `绘图收到 ${graphNaN[1].toUpperCase()} 轴的 NaN 值，已跳过该数据点。接收缓冲区：${graphNaN[2]}`;
+  }
+
+  if (replacement === undefined) {
+    const graphNoY = core.match(/^Graphing: No valid Y values found in line\. rxDataBuffer:\s*(.*)$/s);
+    if (graphNoY) replacement = `绘图：本行未找到有效的 Y 值。接收缓冲区：${graphNoY[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const graphParseFailure = core.match(/^Error parsing plot command(s)?:\s*(.+)$/s);
+    if (graphParseFailure) replacement = `解析绘图命令失败：${translated(graphParseFailure[2])}`;
+  }
+
+  if (replacement === undefined) {
+    const unknownGraphCommand = core.match(/^Unknown graph command:\s*(.+)$/s);
+    if (unknownGraphCommand) replacement = `未知的图表命令：${unknownGraphCommand[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const missingGraphObject = core.match(/^(Plot|Trace) (.+) does not exist$/s);
+    if (missingGraphObject) replacement = `${missingGraphObject[1] === 'Plot' ? '图表' : '曲线'} ${missingGraphObject[2]} 不存在`;
+  }
+
+  if (replacement === undefined) {
+    const invalidXType = core.match(/^Invalid xtype: (.+)\. Must be data, counter, or timestamp$/s);
+    if (invalidXType) replacement = `无效的 xtype：${invalidXType[1]}。必须为 data、counter 或 timestamp`;
   }
 
   if (replacement === undefined) {

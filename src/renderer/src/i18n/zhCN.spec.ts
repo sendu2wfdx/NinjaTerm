@@ -143,4 +143,49 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(labels[3]?.textContent).toBe('未选择器件');
     expect(labels[4]?.textContent).toBe('已找到 J-Link Commander：C:\\SEGGER\\JLink.exe');
   });
+
+  it('translates parameterized RTT and J-Link snackbar errors', () => {
+    document.body.innerHTML = `
+      <span>Error opening connection: J-Link probe not found while attempting to attach to "HPM6750xVMx". No emulator (probe) connected on USB.</span>
+      <span>Error opening connection: Unknown target device "HPM6750". J-Link does not recognise this name. Check the "Target device" field in Connection Settings.</span>
+      <span>Error opening connection: Failed to attach to target "HPM6750xVMx": Connect to target failed.</span>`;
+    installLocalization();
+
+    const messages = document.querySelectorAll('span');
+    expect(messages[0]?.textContent).toBe('打开连接失败：连接目标“HPM6750xVMx”时未找到 J-Link 探针：USB 上未连接 J-Link 仿真器（探针）。');
+    expect(messages[1]?.textContent).toBe('打开连接失败：未知目标器件“HPM6750”。J-Link 无法识别该名称，请检查连接设置中的“目标器件”。');
+    expect(messages[2]?.textContent).toBe('打开连接失败：连接目标“HPM6750xVMx”失败：连接目标失败。');
+  });
+
+  it('translates common runtime snackbar notifications', () => {
+    document.body.innerHTML = `
+      <span>Serial port error: Access denied</span>
+      <span>Socket connected to 192.168.1.10:5000.</span>
+      <span>Bluetooth device connected: Sensor (AA:BB:CC).</span>
+      <span>Failed to write to log file: Disk full</span>
+      <span>Preset "HPM6750" updated.</span>
+      <span>24 chars copied to clipboard.</span>`;
+    installLocalization();
+
+    const messages = document.querySelectorAll('span');
+    expect(messages[0]?.textContent).toBe('串口错误：Access denied');
+    expect(messages[1]?.textContent).toBe('已连接网络套接字 192.168.1.10:5000。');
+    expect(messages[2]?.textContent).toBe('蓝牙设备已连接：Sensor（AA:BB:CC）。');
+    expect(messages[3]?.textContent).toBe('写入日志文件失败：Disk full');
+    expect(messages[4]?.textContent).toBe('预设“HPM6750”已更新。');
+    expect(messages[5]?.textContent).toBe('已将 24 个字符复制到剪贴板。');
+  });
+
+  it('translates graphing warnings without altering their diagnostic values', () => {
+    document.body.innerHTML = `
+      <span>Graphing received NaN value for y-axis. Skipping data point. rxDataBuffer: y=oops</span>
+      <span>Plot scope does not exist</span>
+      <span>Invalid xtype: sample. Must be data, counter, or timestamp</span>`;
+    installLocalization();
+
+    const messages = document.querySelectorAll('span');
+    expect(messages[0]?.textContent).toBe('绘图收到 Y 轴的 NaN 值，已跳过该数据点。接收缓冲区：y=oops');
+    expect(messages[1]?.textContent).toBe('图表 scope 不存在');
+    expect(messages[2]?.textContent).toBe('无效的 xtype：sample。必须为 data、counter 或 timestamp');
+  });
 });
