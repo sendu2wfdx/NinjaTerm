@@ -57,4 +57,13 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(document.body.textContent).toBe('General');
     expect(document.documentElement.lang).toBe('en');
   });
+
+  it('translates dynamic status text and the window title', () => {
+    document.title = 'NinjaTerm - Session 1';
+    document.body.innerHTML = '<span>Status: CLOSED</span>';
+    installLocalization();
+
+    expect(document.title).toBe('NinjaTerm 中文版 - Session 1');
+    expect(document.body.textContent).toBe('状态：已关闭');
+  });
 });

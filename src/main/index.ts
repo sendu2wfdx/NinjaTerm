@@ -82,11 +82,13 @@ autoUpdater.channel = 'latest';
 autoUpdater.allowPrerelease = false;
 autoUpdater.allowDowngrade = false;
 
-// Explicitly set the GitHub repository for updates
+// This community build must update only from the Chinese fork. Pointing at
+// upstream would treat v5.19.0 as newer than v5.19.0-zh.1 and overwrite the
+// localized installation with the English build.
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') {
   autoUpdater.setFeedURL({
     provider: 'github',
-    owner: 'gbmhunter',
+    owner: 'sendu2wfdx',
     repo: 'NinjaTerm',
     private: false
   });

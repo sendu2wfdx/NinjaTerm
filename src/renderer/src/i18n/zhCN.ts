@@ -58,6 +58,18 @@ const zhCN: Record<string, string> = {
 
   // Connection settings
   'Connection Type': '连接类型',
+  'Available Serial Ports': '可用串口',
+  'Select': '选择',
+  'Port Path': '端口',
+  'Friendly Name': '设备名称',
+  'Manufacturer': '制造商',
+  'Vendor ID': '厂商 ID',
+  'Product ID': '产品 ID',
+  'Serial Number': '序列号',
+  'Location ID': '位置 ID',
+  'PNP ID': '即插即用 ID',
+  'RESCAN': '重新扫描',
+  'Status': '状态',
   'Serial Port': '串口',
   'Socket': '网络套接字',
   'Bluetooth LE': '低功耗蓝牙',
@@ -85,10 +97,20 @@ const zhCN: Record<string, string> = {
   'TCP server': 'TCP 服务器',
   'UDP': 'UDP',
   'Baud Rate': '波特率',
+  'Baud rate': '波特率',
   'Data Bits': '数据位',
+  'Num. data bits': '数据位数',
   'Stop Bits': '停止位',
+  'Stop bits': '停止位',
   'Parity': '校验位',
+  'none': '无',
   'Flow Control': '流控制',
+  'Flow Control Settings': '流控制设置',
+  'Let driver/OS manage RTS/CTS signals': '由驱动程序/系统管理 RTS/CTS 信号',
+  'XON software flow control': 'XON 软件流控制',
+  'XOFF software flow control': 'XOFF 软件流控制',
+  'XANY (any character restarts output)': 'XANY（任意字符恢复发送）',
+  'Drop DTR on close (HUPCL)': '关闭端口时释放 DTR（HUPCL）',
   'None': '无',
   'Even': '偶校验',
   'Odd': '奇校验',
@@ -113,6 +135,17 @@ const zhCN: Record<string, string> = {
   'Request port access': '请求端口访问权限',
   'Send break': '发送 Break',
   'ASCII': 'ASCII',
+  'Echo ON': '回显：开',
+  'Echo OFF': '回显：关',
+  'Logging ON': '日志：开',
+  'Logging OFF': '日志：关',
+  'Graphing ON': '绘图：开',
+  'Graphing OFF': '绘图：关',
+  'Timestamps ON': '时间戳：开',
+  'Timestamps OFF': '时间戳：关',
+  'MCP ON': 'MCP：开',
+  'MCP OFF': 'MCP：关',
+  'Port NOT CONN': '端口未连接',
   'HEX': '十六进制',
   'Data': '数据',
   'Name': '名称',
@@ -267,7 +300,29 @@ function translated(value: string): string {
   const leading = value.match(/^\s*/)?.[0] ?? '';
   const trailing = value.match(/\s*$/)?.[0] ?? '';
   const core = value.slice(leading.length, value.length - trailing.length);
-  const replacement = zhCN[core];
+  let replacement = zhCN[core];
+
+  if (replacement === undefined) {
+    const status = core.match(/^Status:\s*(.+)$/);
+    if (status) {
+      const states: Record<string, string> = {
+        CLOSED: '已关闭',
+        OPENED: '已打开',
+        'CLOSED (will reopen)': '已关闭（将重连）',
+      };
+      replacement = `状态：${states[status[1]] ?? status[1]}`;
+    }
+  }
+
+  if (replacement === undefined && core.startsWith('NinjaTerm - ')) {
+    replacement = `NinjaTerm 中文版 - ${core.slice('NinjaTerm - '.length)}`;
+  }
+
+  if (replacement === undefined) {
+    const update = core.match(/^Update v(.+) is available and will be downloaded in the background\.$/);
+    if (update) replacement = `发现新版本 v${update[1]}，将在后台下载。`;
+  }
+
   return replacement === undefined ? value : `${leading}${replacement}${trailing}`;
 }
 
@@ -340,14 +395,14 @@ export function installLocalization(): void {
       if (mutation.type === 'attributes') localizeElement(mutation.target as Element);
     }
   });
-  observer.observe(document.body, {
+  observer.observe(document.documentElement, {
     childList: true,
     subtree: true,
     characterData: true,
     attributes: true,
     attributeFilter: ['title', 'aria-label', 'placeholder'],
   });
-  localizeTree(document.body);
+  localizeTree(document.documentElement);
 }
 
 /** Stops DOM observation. Primarily useful for tests and hot reload. */
@@ -364,7 +419,7 @@ export function setUiLanguage(next: UiLanguage): void {
   language = next;
   localStorage.setItem(STORAGE_KEY, next);
   document.documentElement.lang = next;
-  localizeTree(document.body);
+  localizeTree(document.documentElement);
 }
 
 export function toggleUiLanguage(): void {
