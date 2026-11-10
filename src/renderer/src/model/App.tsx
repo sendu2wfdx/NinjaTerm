@@ -605,8 +605,11 @@ export class App {
 
     // Update error
     electronAPI.updater.onUpdateError((error: any) => {
+      // Keep the verbose network/stack error in the developer log. Rendering
+      // it in a snackbar can cover most of the terminal window.
+      console.error('Update check failed:', error);
       this.snackbar.sendToSnackbar(
-        `Update error: ${error.message || error}`,
+        'Update check failed. See the application log for details.',
         'error'
       );
     });
