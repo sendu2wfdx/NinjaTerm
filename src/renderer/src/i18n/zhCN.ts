@@ -45,7 +45,6 @@ const zhCN: Record<string, string> = {
 
   // Settings navigation
   'Get started': '快速开始',
-  'Presets': '预设',
   'Communication': '通信',
   'Connection': '连接',
   'TX Settings': '发送设置',
@@ -160,6 +159,10 @@ const zhCN: Record<string, string> = {
   'Send on interval': '定时发送',
   'Interval (ms)': '间隔（ms）',
   'Process escape characters': '解析转义字符',
+  'Settings view': '设置页面',
+  'Controls how to display the TX and RX data. Different use cases require different view configurations.': '设置发送和接收数据的显示方式，不同使用场景适合不同的布局。',
+  'Separate TX/RX terminals: TX and RX data are kept in separate panes. Useful for when you have a lot of incoming basic RX data and what to still see the data you are sending.': '分离 TX/RX 终端：发送和接收数据分别显示，适合接收数据量较大且仍需观察发送内容的场景。',
+  'The font size (in pixels) of characters displayed in the terminal.': '终端字符的字体大小（像素）。',
   'Other Quick Settings': '其他快捷设置',
   'For more options, go to the': '更多选项请前往',
   'Settings view.': '设置页面。',
@@ -169,6 +172,18 @@ const zhCN: Record<string, string> = {
   'Char Size': '字符大小',
   'Local TX Echo': '本地发送回显',
   'Single terminal: TX and RX data is combined in the same pane. Useful for terminal style applications when escape codes are used.': '单终端：发送和接收数据显示在同一窗格中，适合使用转义序列的终端类应用。',
+
+  // Terminal filters
+  'Filters (match any)': '过滤器（任一匹配）',
+  'No filters. Add one to start filtering the terminal.': '尚无过滤器，添加一个即可开始过滤终端内容。',
+  'Filter pattern': '过滤内容',
+  'Enable/disable this filter.': '启用或禁用此过滤器。',
+  'Match as a regular expression.': '使用正则表达式匹配。',
+  'Match case-sensitively.': '区分大小写。',
+  'Remove this filter.': '删除此过滤器。',
+  'Filter the rows shown in the terminal. A row is shown if it matches any enabled filter (logical OR). Each filter can be a plain substring or a regular expression, with optional case-sensitivity.': '过滤终端中显示的行。只要一行匹配任一已启用过滤器（逻辑或）便会显示。过滤器可使用普通子串或正则表达式，并可选择是否区分大小写。',
+  'The row the cursor is on is always shown.': '光标所在行始终显示。',
+  'Disable or remove all filters to show everything.': '禁用或删除全部过滤器即可显示所有内容。',
 
   // TX/RX settings
   'TX Mode': '发送模式',
@@ -217,7 +232,7 @@ const zhCN: Record<string, string> = {
   'Value to insert new line on': '触发换行的数值',
   'Insert new line before or after value?': '在该数值之前还是之后换行？',
   'Before': '之前',
-  'After': '之后',
+  'After': '应用后',
   'Padding Settings': '填充设置',
   'Pad values': '填充数值',
   'Padding character:': '填充字符：',
@@ -348,6 +363,34 @@ const zhCN: Record<string, string> = {
   'Matched text only': '仅匹配文字',
   'Entire line': '整行',
   'Built-in presets': '内置预设',
+  'Presets': '预设',
+  'Save your current settings as a preset, or apply one of the built-in presets. When saving a preset, you can choose to only save certain settings.': '将当前设置保存为预设，或应用一个内置预设。保存时可以选择只包含部分设置。',
+  'Search presets': '搜索预设',
+  'Save current settings as preset...': '将当前设置保存为预设…',
+  'Your presets': '我的预设',
+  'Built in': '内置预设',
+  "You haven't saved any presets yet.": '尚未保存任何预设。',
+  'No saved presets match your search.': '没有与搜索条件匹配的已保存预设。',
+  'No built-in presets match your search.': '没有与搜索条件匹配的内置预设。',
+  'Undo last preset': '撤销上次预设操作',
+  'Update': '更新',
+  'Everything': '全部设置',
+  'Connection settings': '连接设置',
+  'RX data handling': '接收数据处理',
+  'TX / key behaviour': '发送与按键行为',
+  'DOS text-mode (CP437)': 'DOS 文本模式（CP437）',
+  'Full-screen text-mode UIs that draw frames with box-drawing characters.': '使用制表字符绘制边框的全屏文本界面。',
+  'Show every received byte as a two-digit hex value.': '将每个接收字节显示为两位十六进制数。',
+  'Interactive shell over UART, with coloured log levels and line editing.': '通过 UART 使用交互式命令行，支持彩色日志级别和行编辑。',
+  'Line mode (SCPI instruments)': '行模式（SCPI 仪器）',
+  'Compose a whole command and send it as a single write.': '编辑完整命令后一次性发送。',
+  'Long-running capture of human-readable output, with timestamps.': '长时间采集可读文本输出，并添加时间戳。',
+  'NinjaTerm defaults': 'NinjaTerm 默认设置',
+  'Put the RX, TX and display settings back to how they ship.': '将接收、发送和显示设置恢复为初始默认值。',
+  'Replace this preset with your current settings.': '用当前设置更新此预设。',
+  'Delete this preset.': '删除此预设。',
+  'Save your current settings as a new preset, choosing what it should cover.': '将当前设置保存为新预设，并选择要包含的设置。',
+  'Restore the settings as they were before the last preset was applied.': '恢复到应用上一个预设之前的设置。',
   'Saved presets': '已保存预设',
   'Save current settings as preset': '将当前设置保存为预设',
   'Preset name': '预设名称',
@@ -356,9 +399,60 @@ const zhCN: Record<string, string> = {
   'Zephyr / RTOS shell': 'Zephyr / RTOS 命令行',
   'Plain-text log capture': '纯文本日志采集',
   'Hex dump': '十六进制转储',
+  'Save current settings as a preset': '将当前设置保存为预设',
+  'That name is used by a built-in preset.': '该名称已被内置预设使用。',
+  'What should this preset cover?': '该预设应包含哪些设置？',
+  'Select all': '全选',
+  'Select none': '全不选',
+  'Pick at least one thing to save, otherwise applying this preset would do nothing.': '请至少选择一项要保存的设置，否则应用该预设不会产生任何效果。',
+  'This preset matches your current settings, so there is nothing to change.': '该预设与当前设置一致，无需更改。',
+  'Setting': '设置项',
+  'Now': '当前值',
+  'All other settings are left unchanged, including your connection settings, colours and logging. You can undo this straight afterwards.': '其他设置均保持不变，包括连接设置、颜色和日志设置；应用后可立即撤销。',
+  'The connection type, address (e.g. serial port ID, BLE device or socket address), and connection parameters.': '连接类型、地址（例如串口 ID、BLE 设备或套接字地址）以及连接参数。',
+  'How received bytes are decoded and displayed.': '接收字节的解码和显示方式。',
+  'What the Enter, Backspace and Delete keys send.': 'Enter、Backspace 和 Delete 键发送的内容。',
+  'Font, terminal size, colours and scrollback.': '字体、终端尺寸、颜色和回滚缓冲区。',
+  'What gets logged and how files are named.': '记录哪些内容以及日志文件的命名方式。',
+  'Patterns that colour matching text or play a sound.': '为匹配文字着色或播放声音的规则。',
+  'The macros in the right drawer.': '右侧抽屉中的宏。',
+  'Filters applied to the terminal view.': '应用于终端视图的过滤器。',
+  'How values are parsed out of the data stream and plotted.': '如何从数据流解析数值并绘制图表。',
+  'Copy and paste behaviour.': '复制与粘贴行为。',
+  'Drawer layout': '抽屉布局',
+  'Right drawer width and which sections are expanded.': '右侧抽屉宽度及各区域的展开状态。',
 
   // Logging and graphing
   'Logging': '日志记录',
+  'LOGGING': '日志记录',
+  'Directory and Permissions': '目录与权限',
+  'Select log directory': '选择日志目录',
+  'Directory status:': '目录状态：',
+  'NOT SELECTED': '未选择',
+  'SELECTED': '已选择',
+  'Selected directory:': '已选目录：',
+  'File Naming': '文件命名',
+  'What to name the file:': '文件命名方式：',
+  'Save in the form "NinjaTerm Logs - <DATETIME>.txt". The current local datetime when logging is started will be used in the form "YYYY-MM-DD HH-MM-SS".': '保存为“NinjaTerm Logs - <日期时间>.txt”；开始记录时的本地时间采用“YYYY-MM-DD HH-MM-SS”格式。',
+  'Names the file with the current datetime at the moment logging is started.': '以开始记录时的当前日期和时间命名文件。',
+  'Use a custom filename as defined below.': '使用下方定义的自定义文件名。',
+  'Custom File Name': '自定义文件名',
+  'Existing File Behavior': '已有文件处理方式',
+  'If file already exists when logging is started:': '开始记录时如果文件已存在：',
+  'Appends data to the end of the existing file.': '将数据追加到已有文件末尾。',
+  'Overwrites an existing file with the same name.': '覆盖同名已有文件。',
+  'What To Log?': '记录哪些数据？',
+  'Raw TX data': '原始发送数据',
+  'Raw RX data': '原始接收数据',
+  'Log the raw bytes being received from the serial port to the log file.': '将串口接收的原始字节写入日志文件。',
+  'Log the raw bytes being sent out the serial port to the log file.': '将串口发送的原始字节写入日志文件。',
+  'Enabling and Status': '启用与状态',
+  'Enable Logging': '启用日志记录',
+  'Writing to file named:': '正在写入文件：',
+  'Amount of data written:': '已写入数据量：',
+  'File size (approx.):': '文件大小（约）：',
+  'n/a': '无',
+  'The log file is written to once per second, so your data should still be there even if something unexpected happens (e.g. computer battery runs flat, Windows decides it\'s a good time to update).': '日志文件每秒写入一次，因此即使发生意外（例如电脑断电或 Windows 突然更新），绝大部分数据仍会保留。',
   'Start Logging': '开始记录',
   'Stop Logging': '停止记录',
   'Log Directory': '日志目录',
@@ -369,6 +463,56 @@ const zhCN: Record<string, string> = {
   'Include RX data': '包含接收数据',
   'Include TX data': '包含发送数据',
   'Graphing': '图表',
+  'Enable Graphing': '启用绘图',
+  'Data:': '数据：',
+  'Plots:': '图表：',
+  'Detection Mode': '检测模式',
+  'Basic Prefix Mode': '基础前缀模式',
+  'Advanced Cmd Mode': '高级命令模式',
+  'Processing Trigger': '处理触发符',
+  'Custom': '自定义',
+  'Max. Buffer Size': '最大缓冲区大小',
+  'Num. bytes in buffer:': '缓冲区字节数：',
+  'Max. Num. Data Points': '最大数据点数',
+  'X Variable Source': 'X 变量来源',
+  'Received Time': '接收时间',
+  'Counter': '计数器',
+  'In Data': '来自数据',
+  'X Variable Prefix': 'X 变量前缀',
+  'Y Variable Prefix': 'Y 变量前缀',
+  'Multiple Values Per Buffer': '每个缓冲区解析多个值',
+  'Value Separator': '数值分隔符',
+  'Custom Separator': '自定义分隔符',
+  'Clear Plot On New Values': '收到新数据时清空图表',
+  'X Axis Range Mode': 'X 轴范围模式',
+  'Y Axis Range Mode': 'Y 轴范围模式',
+  'Fixed': '固定',
+  'X-Axis Range Min.': 'X 轴范围最小值',
+  'X-Axis Range Max.': 'X 轴范围最大值',
+  'Y-Axis Range Min.': 'Y 轴范围最小值',
+  'Y-Axis Range Max.': 'Y 轴范围最大值',
+  'Update X Range From Data': '根据数据更新 X 轴范围',
+  'Update Y Range From Data': '根据数据更新 Y 轴范围',
+  'Choose how graphing data is detected and parsed. Basic Prefix Mode uses processing triggers and y= prefix (legacy). Advanced Cmd Mode uses #PLOT: commands. See the online NinjaTerm manual for more details.': '选择绘图数据的检测与解析方式。基础前缀模式使用处理触发符和 y= 前缀（兼容模式）；高级命令模式使用 #PLOT: 命令。详情请参阅 NinjaTerm 在线手册。',
+  'Open the NinjaTerm manual in your browser. This contains information on the graphing system and how to use it.': '在浏览器中打开 NinjaTerm 手册，其中包含绘图系统的用法说明。',
+  'The character sequence that triggers processing of accumulated command data. Commands are parsed when this trigger is received.': '触发累计命令数据处理的字符序列。收到该序列时解析命令。',
+  'The character sequence which triggers processing for data points from data that has accumulated in the buffer since the last sequence.': '触发数据点处理的字符序列；处理自上次触发后累积在缓冲区中的数据。',
+  'The max. size the graphing receiving buffer can grow to waiting for command termination (;). The receive buffer is cleared if this size is exceeded. Must be an integer in the range [1-10000].': '等待命令结束符（;）时绘图接收缓冲区允许增长的最大值。超过后将清空缓冲区，必须为 [1–10000] 范围内的整数。',
+  'The max. size the graphing receiving buffer can grow to waiting for a processing trigger. The receive buffer is cleared if this size is exceeded. Must be an integer in the range [1-10000].': '等待处理触发符时绘图接收缓冲区允许增长的最大值。超过后将清空缓冲区，必须为 [1–10000] 范围内的整数。',
+  'The max. number of previous data points to display per trace. Must be an integer in the range [1-2000]. Increasing this will increase the CPU usage.': '每条曲线保留并显示的历史数据点上限，必须为 [1–2000] 范围内的整数。增大该值会提高 CPU 占用。',
+  'The number of bytes currently in the graphing buffer. This is the number of bytes that have been received but not yet processed. They will be processed (graph information extracted) when the processing trigger is received.': '绘图缓冲区中当前尚未处理的接收字节数；收到处理触发符后会从中提取图表数据。',
+  'The string that precedes each x value in the input data stream.': '输入数据流中每个 X 值之前的字符串。',
+  'The string that precedes each y value in the input data stream.': '输入数据流中每个 Y 值之前的字符串。',
+  'Enable parsing multiple comma/space-separated values from each buffer instead of just one value per buffer.': '允许从每个缓冲区解析多个以逗号或空格分隔的数值，而不是只解析一个值。',
+  'The character that separates multiple values within a single line.': '同一行内多个数值之间使用的分隔字符。',
+  'Custom character(s) to use as value separator.': '用作数值分隔符的自定义字符。',
+  'When enabled, the plot is cleared each time new data arrives in a buffer. Useful for displaying snapshots of data rather than accumulating over time.': '启用后，每次缓冲区收到新数据都会清空图表，适合显示数据快照而非持续累积。',
+  'Auto: Limits change to accommodate all data.': '自动：范围随全部数据自动调整。',
+  'Fixed: Specify the limits in the below inputs.': '固定：在下方输入范围上下限。',
+  'Minimum X axis value.': 'X 轴最小值。',
+  'Maximum X axis value.': 'X 轴最大值。',
+  'Minimum Y axis value.': 'Y 轴最小值。',
+  'Maximum Y axis value.': 'Y 轴最大值。',
   'Start Graphing': '开始绘图',
   'Stop Graphing': '停止绘图',
   'Clear Graph': '清空图表',
@@ -376,6 +520,15 @@ const zhCN: Record<string, string> = {
   'Y Axis': 'Y 轴',
   'Minimum': '最小值',
   'Maximum': '最大值',
+  'The source of data for the X-axis variable.': 'X 轴变量的数据来源。',
+  'Changing this resets the graph.': '更改此项会重置图表。',
+  "Received Time: Time is seconds that the data points was received at since the graph was last reset. NOTE: Don't rely on this for accurate timing (millisecond or lower range), as timing is dependent on OS buffering and CPU usage. Instead, record the time on the microcontroller, send it along with the y value and use \"In Data\".": '接收时间：自上次重置图表起，数据点被接收时的秒数。注意：该时间受操作系统缓冲和 CPU 占用影响，不适合毫秒级或更高精度计时；需要精确计时时，请在微控制器上记录时间，与 Y 值一同发送，并选择“来自数据”。',
+  'Counter: X value is a 0-based counter that increments when a new data point is received.': '计数器：X 值为从 0 开始的计数器，每收到一个新数据点便递增。',
+  'In Data: Extract the x value from the data, just like the y-value.': '来自数据：像提取 Y 值一样从数据中提取 X 值。',
+  'Comma (,)': '逗号（,）',
+  'Space': '空格',
+  'Time [s]': '时间 [秒]',
+  'Counts': '计数值',
 
   // General settings
   'Copy/Paste Settings': '复制与粘贴设置',
@@ -398,6 +551,7 @@ const zhCN: Record<string, string> = {
   'Run comprehensive performance tests to measure data processing speed, rendering performance, and identify bottlenecks. Tests automatically switch between Terminal and Graphing views for accurate measurements of view-specific rendering performance.': '运行综合性能测试，测量数据处理速度和渲染性能并定位瓶颈。测试会自动切换终端与图表页面，以准确测量各页面的渲染性能。',
   'Run Performance Tests': '运行性能测试',
   'Running Tests...': '正在测试…',
+  'Running performance tests... This will take about 30 seconds and will automatically switch between Terminal and Graphing views to measure rendering performance accurately. The Settings dialog will be closed during testing to prevent MUI component render overhead.': '正在运行性能测试……大约需要 30 秒。程序会自动切换终端与图表页面以准确测量渲染性能；测试期间设置窗口会关闭，以避免 MUI 组件带来的额外渲染开销。',
   'Show Current Metrics': '显示当前指标',
   'Performance tests measure view-specific rendering costs by automatically switching between Terminal and Graphing views. Terminal tests measure text rendering and ANSI processing, while Graphing tests measure chart.js performance and data parsing overhead.': '性能测试会自动切换终端和图表页面，以分别测量渲染开销；终端测试涵盖文字渲染与 ANSI 解析，图表测试涵盖 Chart.js 性能与数据解析开销。',
   'Developer Tools': '开发者工具',
@@ -411,6 +565,14 @@ const zhCN: Record<string, string> = {
   'Are you sure you want to clear all app data and reload?': '确定要清除全部应用数据并重新加载吗？',
   'You will lose all profiles and all settings will be reset to default. Logged data saved to disk will NOT be deleted.': '所有配置和设置都将恢复默认值，但已保存到磁盘的日志数据不会被删除。',
 };
+
+// MUI commonly applies `text-transform: uppercase` in CSS while the DOM still
+// contains title-case text. A case-insensitive fallback keeps button variants
+// such as "Show Side Panel" and "SHOW SIDE PANEL" in sync without duplicating
+// every spelling in the table.
+const zhCNCaseInsensitive = new Map(
+  Object.entries(zhCN).map(([source, target]) => [source.toLocaleLowerCase('en-US'), target]),
+);
 
 const originalText = new WeakMap<Text, string>();
 const originalAttributes = new WeakMap<Element, Map<string, string>>();
@@ -429,7 +591,7 @@ function translated(value: string): string {
   const leading = value.match(/^\s*/)?.[0] ?? '';
   const trailing = value.match(/\s*$/)?.[0] ?? '';
   const core = value.slice(leading.length, value.length - trailing.length);
-  let replacement = zhCN[core];
+  let replacement: string | undefined = zhCN[core];
 
   // JSX paragraphs are often formatted over several source lines. Browsers
   // collapse that whitespace visually, so use the same collapsed form as a
@@ -439,8 +601,37 @@ function translated(value: string): string {
   }
 
   if (replacement === undefined) {
+    replacement = zhCNCaseInsensitive.get(core.replace(/\s+/g, ' ').toLocaleLowerCase('en-US'));
+  }
+
+  if (replacement === undefined) {
     const session = core.match(/^Session (\d+)$/);
     if (session) replacement = `会话 ${session[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const graphStats = core.match(/^Data:\s*(\d+)\s*\|\s*Plots:\s*(\d+)$/);
+    if (graphStats) replacement = `数据：${graphStats[1]} | 图表：${graphStats[2]}`;
+  }
+
+  if (replacement === undefined) {
+    const bufferBytes = core.match(/^Num\. bytes in buffer:\s*(\d+)$/);
+    if (bufferBytes) replacement = `缓冲区字节数：${bufferBytes[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const selectedDirectory = core.match(/^Selected directory:\s*(.+)$/);
+    if (selectedDirectory) replacement = `已选目录：${selectedDirectory[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const applyPreset = core.match(/^Apply "(.+)" to your current settings\.$/);
+    if (applyPreset) replacement = `将“${applyPreset[1]}”应用到当前设置。`;
+  }
+
+  if (replacement === undefined) {
+    const existingPreset = core.match(/^A preset called "(.+)" already exists and will be replaced\.$/);
+    if (existingPreset) replacement = `名为“${existingPreset[1]}”的预设已存在，将被替换。`;
   }
 
   if (replacement === undefined) {

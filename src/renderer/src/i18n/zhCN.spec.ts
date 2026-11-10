@@ -78,4 +78,26 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(document.querySelector('span')?.textContent).toBe('会话 12');
     expect(document.querySelector('p')?.textContent).toContain('每一完整行都会执行规则匹配');
   });
+
+  it('matches title-case button text and translates dynamic graphing text', () => {
+    document.body.innerHTML = `
+      <button>Show Side Panel</button>
+      <span>Data: 12 | Plots: 3</span>
+      <span>Num. bytes in buffer: 48</span>`;
+    installLocalization();
+
+    expect(document.querySelector('button')?.textContent).toBe('显示侧边栏');
+    expect(document.querySelectorAll('span')[0]?.textContent).toBe('数据：12 | 图表：3');
+    expect(document.querySelectorAll('span')[1]?.textContent).toBe('缓冲区字节数：48');
+  });
+
+  it('translates dynamic preset and logging descriptions', () => {
+    document.body.innerHTML = `
+      <span>A preset called "Board setup" already exists and will be replaced.</span>
+      <span>Selected directory: C:\\logs</span>`;
+    installLocalization();
+
+    expect(document.querySelectorAll('span')[0]?.textContent).toBe('名为“Board setup”的预设已存在，将被替换。');
+    expect(document.querySelectorAll('span')[1]?.textContent).toBe('已选目录：C:\\logs');
+  });
 });
