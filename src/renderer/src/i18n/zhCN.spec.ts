@@ -67,6 +67,16 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(document.body.textContent).toBe('状态：已关闭');
   });
 
+  it('translates status labels split into separate React text nodes', () => {
+    document.body.innerHTML = '<span><i>Status: </i><b>CLOSED</b></span><span>OPENED</span><span>CLOSED_BUT_WILL_REOPEN</span>';
+    installLocalization();
+
+    expect(document.querySelector('i')?.textContent).toBe('状态： ');
+    expect(document.querySelector('b')?.textContent).toBe('已关闭');
+    expect(document.querySelectorAll('span')[1]?.textContent).toBe('已打开');
+    expect(document.querySelectorAll('span')[2]?.textContent).toBe('已关闭（等待重连）');
+  });
+
   it('translates default session names and multiline JSX paragraphs', () => {
     document.body.innerHTML = `
       <span>Session 12</span>
