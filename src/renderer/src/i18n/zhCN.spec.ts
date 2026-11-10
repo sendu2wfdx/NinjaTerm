@@ -63,7 +63,19 @@ describe('Simplified-Chinese UI overlay', () => {
     document.body.innerHTML = '<span>Status: CLOSED</span>';
     installLocalization();
 
-    expect(document.title).toBe('NinjaTerm 中文版 - Session 1');
+    expect(document.title).toBe('NinjaTerm 中文版 - 会话 1');
     expect(document.body.textContent).toBe('状态：已关闭');
+  });
+
+  it('translates default session names and multiline JSX paragraphs', () => {
+    document.body.innerHTML = `
+      <span>Session 12</span>
+      <p>Rules paint the background of matching characters in the terminal scrollback and can
+      optionally play a sound when a matching line completes. Rules are evaluated per
+      finalised row.</p>`;
+    installLocalization();
+
+    expect(document.querySelector('span')?.textContent).toBe('会话 12');
+    expect(document.querySelector('p')?.textContent).toContain('每一完整行都会执行规则匹配');
   });
 });
