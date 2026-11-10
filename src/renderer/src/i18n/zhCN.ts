@@ -564,6 +564,91 @@ const zhCN: Record<string, string> = {
   'This action cannot be undone.': '此操作无法撤销。',
   'Are you sure you want to clear all app data and reload?': '确定要清除全部应用数据并重新加载吗？',
   'You will lose all profiles and all settings will be reset to default. Logged data saved to disk will NOT be deleted.': '所有配置和设置都将恢复默认值，但已保存到磁盘的日志数据不会被删除。',
+
+  // Remaining connection backends and runtime messages
+  'Support NinjaTerm on Ko-fi. Opens in your browser.': '在 Ko-fi 上赞助 NinjaTerm（将在浏览器中打开）',
+  'Controls': '控制',
+  'Separate TX/RX terminals': '分离发送/接收终端',
+  'Developer tools closed': '开发者工具已关闭',
+  'Socket Connection Settings': '网络套接字连接设置',
+  'IP address (e.g. 192.168.1.100) or hostname (e.g. www.example.com) of the TCP socket server to connect to.': '要连接的 TCP 套接字服务器 IP 地址（如 192.168.1.100）或主机名（如 www.example.com）。',
+  'IP address or hostname': 'IP 地址或主机名',
+  'Port number of the TCP socket server to connect to. Must be between 1 and 65535 (inclusive).': '要连接的 TCP 套接字服务器端口号，必须在 1 至 65535 之间（含端点）。',
+  'Port number': '端口号',
+  'Connection timeout (ms)': '连接超时（毫秒）',
+  'Timeout in milliseconds': '超时时间（毫秒）',
+  'Open or close the socket connection.': '打开或关闭网络套接字连接。',
+
+  'NinjaTerm will spawn J-Link Commander (JLink.exe), attach to the target, and connect to RTT channel 0 on TCP port 19021. SEGGER J-Link software must be installed on this machine.': 'NinjaTerm 将启动 J-Link Commander（JLink.exe）、连接目标器件，并通过 TCP 端口 19021 连接 RTT 通道 0。本机必须已安装 SEGGER J-Link 软件。',
+  "SEGGER target device identifier, e.g. nRF52832_xxAA, STM32F407VG, RP2040_M0_0. Pick from the suggestions or type any device name accepted by J-Link Commander's `device` command. J-Link's full device list has thousands of entries — if yours isn't in the dropdown just type it in.": 'SEGGER 目标器件标识，例如 nRF52832_xxAA、STM32F407VG、RP2040_M0_0。可从建议中选择，也可输入 J-Link Commander 的 device 命令支持的任意器件名；下拉列表未列出时可直接输入。',
+  'Recently used': '最近使用',
+  'Target device': '目标器件',
+  'SEGGER device name (type to filter)': 'SEGGER 器件名称（输入可筛选）',
+  'Debug interface used by the J-Link probe. Most modern ARM Cortex-M targets use SWD.': 'J-Link 探针使用的调试接口。多数现代 ARM Cortex-M 目标使用 SWD。',
+  'RTT channel': 'RTT 通道',
+  'J-Link serial (optional)': 'J-Link 序列号（可选）',
+  'Blank = first available': '留空则使用第一个可用探针',
+  'Optional J-Link probe serial number. Only needed if multiple J-Link probes are connected to this machine. Leave blank to use the first available probe.': '可选的 J-Link 探针序列号。仅在本机连接多个 J-Link 时需要；留空则使用第一个可用探针。',
+  'J-Link Commander path': 'J-Link Commander 路径',
+  'Blank = auto-detect': '留空则自动检测',
+  'Path to J-Link Commander (JLink.exe on Windows, JLinkExe on macOS/Linux). Leave blank to auto-detect in the standard SEGGER install location.': 'J-Link Commander 路径（Windows 为 JLink.exe，macOS/Linux 为 JLinkExe）。留空则在 SEGGER 标准安装位置自动检测。',
+  'Search the standard SEGGER install locations on this machine and fill in the first path found.': '搜索本机 SEGGER 标准安装位置，并填入找到的第一个路径。',
+  'J-Link Commander not found in standard install locations. Use Browse... to select it manually.': '在标准安装位置未找到 J-Link Commander，请使用“浏览…”手动选择。',
+  'Open or close the RTT connection. Spawns J-Link Commander on open.': '打开或关闭 RTT 连接；打开时会启动 J-Link Commander。',
+  'J-Link Commander output': 'J-Link Commander 输出',
+  '(no output yet — open the RTT connection to populate this)': '（暂无输出——打开 RTT 连接后将在此显示）',
+
+  'Bluetooth LE Serial Protocol': '低功耗蓝牙串行协议',
+  'Bluetooth Protocol': '蓝牙协议',
+  'The protocol to use for serial communication over Bluetooth LE. This determines the service and TX/RX characteristic UUIDs to use.': '用于低功耗蓝牙串行通信的协议，它决定要使用的服务以及接收/发送特征 UUID。',
+  'First detected serial protocol': '首个检测到的串行协议',
+  'Nordic Uart Service (NUS)': 'Nordic UART 服务（NUS）',
+  'Microchip Transparent Uart Service': 'Microchip 透明 UART 服务',
+  'TI Serial Port Service (SPS)': 'TI 串行端口服务（SPS）',
+  'u-blox u-connectXpress': 'u-blox u-connectXpress',
+  'Silicon Labs SPP over BLE': 'Silicon Labs BLE SPP',
+  'Manually Specify': '手动指定',
+  'This will check all supported protocols and use the first one that is found. This is generally the best option to use.': '检查所有支持的协议并使用首个检测到的协议，通常建议选择此项。',
+  'The Nordic UART Service (NUS) is used by many nRF MCUs and also other vendor MCUs. It is likely the most popular protocol for BLE serial communication.': 'Nordic UART 服务（NUS）被许多 nRF 及其他厂商 MCU 使用，是很常见的 BLE 串行通信协议。',
+  'The Microchip Transparent UART Service is used by many Microchip MCUs.': 'Microchip 透明 UART 服务被许多 Microchip MCU 使用。',
+  'The TI Serial Port Service (SPP) is a BLE serial protocol used by Texas Instruments.': 'TI 串行端口服务（SPP）是德州仪器使用的 BLE 串行协议。',
+  'The u-blox u-connectXpress is a BLE serial protocol used by u-blox.': 'u-blox u-connectXpress 是 u-blox 使用的 BLE 串行协议。',
+  'The Silicon Labs SPP is a BLE serial protocol used by Silicon Labs.': 'Silicon Labs SPP 是 Silicon Labs 使用的 BLE 串行协议。',
+  'Manually specify the service, RX, and TX UUIDs to use for serial communication. Use this if you have implemented your own custom protocol.': '手动指定串行通信所用的服务、接收和发送 UUID，适用于自定义协议。',
+  'Service UUID': '服务 UUID',
+  'RX Characteristic UUID': '接收特征 UUID',
+  'TX Characteristic UUID': '发送特征 UUID',
+  'Bluetooth service UUID containing the TX and RX characteristics': '包含发送和接收特征的蓝牙服务 UUID',
+  'Characteristic UUID for BLE peripheral to receive data (RX)': 'BLE 外设接收数据的特征 UUID（RX）',
+  'Characteristic UUID for BLE peripheral to transmit data (TX)': 'BLE 外设发送数据的特征 UUID（TX）',
+  'The service UUID to use for serial communication over Bluetooth LE. The same service UUID must be used for both the TX and RX characteristics.': '低功耗蓝牙串行通信使用的服务 UUID；发送和接收特征必须使用同一服务 UUID。',
+  'The RX characteristic UUID to use. This is named w.r.t. the BLE peripheral, i.e. NinjaTerm (the BLE central device) will write data to this characteristic.': '要使用的 RX 特征 UUID（以 BLE 外设视角命名），NinjaTerm 作为 BLE 中心设备会向此特征写入数据。',
+  'The TX characteristic UUID to use. This is named w.r.t. the BLE peripheral, i.e. NinjaTerm (the BLE central device) will read data from this characteristic.': '要使用的 TX 特征 UUID（以 BLE 外设视角命名），NinjaTerm 作为 BLE 中心设备会从此特征读取数据。',
+  'Scan duration (ms)': '扫描时长（毫秒）',
+  'Hide unconnectable devices': '隐藏不可连接的设备',
+  'When checked, devices that do not advertise themselves as connectable will be hidden from the device list below.': '勾选后，下方列表将隐藏未声明为可连接的设备。',
+  'Start scanning for Bluetooth devices. Discovered devices will be displayed in the table below.': '开始扫描蓝牙设备，发现的设备将显示在下方表格中。',
+  'Stop scanning': '停止扫描',
+  'Scan': '扫描',
+  'Connect to the selected Bluetooth LE device, make sure the service, RX, and TX UUIDs are present, and start listening to the TX characteristic.': '连接选定的低功耗蓝牙设备，确认服务及接收/发送 UUID 存在，然后开始监听 TX 特征。',
+  'Available Bluetooth LE Devices': '可用低功耗蓝牙设备',
+  'Click on a column header to sort by that column. Sorted by RSSI by default.': '单击列标题可按该列排序，默认按 RSSI 排序。',
+  'Address': '地址',
+  'Advertisement Name': '广播名称',
+  'Mfg Data': '厂商数据',
+  'Connectable': '可连接',
+  'Advertised Protocols': '广播协议',
+  'No Bluetooth devices found. Click "Scan" to search for devices.': '未发现蓝牙设备，请单击“扫描”搜索设备。',
+  'The duration to scan for BLE devices.': '扫描 BLE 设备的时长。',
+
+  // Serial modem control tooltips
+  'Request To Send. Manual control is disabled because "Let driver/OS manage RTS/CTS signals" is enabled in Connection Settings.': '请求发送（RTS）。由于已在连接设置中启用“由驱动程序/系统管理 RTS/CTS 信号”，手动控制已禁用。',
+  'Request To Send. Write only. Traditionally asserted by the DTE (e.g. computer) to the DCE (e.g. modem) to indicate that it is ready to send data. Commonly used for hardware flow control. 0 is inactive, 1 is active. If this is connected to a UART, then 0 is 5V (inactive) and a 1 is 0V (active). You can disable manual control and let the driver/OS manage it by enabling "Let driver/OS manage RTS/CTS signals" in Connection Settings.': '请求发送（RTS），只写。DTE（如计算机）通常用它通知 DCE（如调制解调器）已准备发送数据，常用于硬件流控制。0 为无效，1 为有效；连接 UART 时通常 0 对应 5V、1 对应 0V。可在连接设置中启用“由驱动程序/系统管理 RTS/CTS 信号”以交由驱动管理。',
+  'Clear To Send. Manual control is disabled because "Let driver/OS manage RTS/CTS signals" is enabled in Connection Settings.': '允许发送（CTS）。由于已在连接设置中启用“由驱动程序/系统管理 RTS/CTS 信号”，手动控制已禁用。',
+  'Clear To Send. Read/write. Commonly used for hardware flow control. You can not usually set this from NinjaTerm (the computer NinjaTerm is running on normally acts as the DTE), and if you set this and it quickly changes, it means the other end is driving the signal. 0 is inactive, 1 is active. If this is connected to a UART, then 0 is 5V (inactive) and a 1 is 0V (active). You can disable manual control and let the driver/OS manage it by enabling "Let driver/OS manage RTS/CTS signals" in Connection Settings.': '允许发送（CTS），可读写，常用于硬件流控制。NinjaTerm 所在计算机通常作为 DTE，因此一般无法主动设置；若设置后立即变化，表示对端正在驱动该信号。0 为无效，1 为有效；连接 UART 时通常 0 对应 5V、1 对应 0V。',
+  'Data Terminal Ready. Write only. Traditionally asserted by the DTE when it was ready to receive data. Not as commonly used for flow control as RTS/CTS. Some older devices used DTR and RTS as a source of power.': '数据终端就绪（DTR），只写。DTE 准备接收数据时通常置位；用于流控制的情况少于 RTS/CTS，部分旧设备还会利用 DTR 和 RTS 供电。',
+  'Data Set Ready. Read/write. Traditionally sent by the DCE (e.g. modem) to the DTE (e.g. computer) to indicate that the DCE is ready to receive data. If you set this and it quickly changes, it means the other end is driving the signal.': '数据设备就绪（DSR），可读写。DCE（如调制解调器）通常用它通知 DTE（如计算机）已准备接收数据；若设置后立即变化，表示对端正在驱动该信号。',
+  'Data Carrier Detect. Read only. Was traditionally driven high (asserted, 1) by the modem (DCE) when it detected a carrier signal, which meant it was connected to another modem on the other end.': '载波检测（DCD），只读。调制解调器（DCE）检测到载波、确认已连接对端时通常将其置高（有效，1）。',
 };
 
 // MUI commonly applies `text-transform: uppercase` in CSS while the DOM still
@@ -584,6 +669,7 @@ function excluded(node: Node): boolean {
   const element = node.nodeType === Node.ELEMENT_NODE
     ? node as Element
     : node.parentElement;
+  if (element?.closest('[data-i18n-localize="true"]')) return false;
   return Boolean(element?.closest('.terminal-row, pre, code'));
 }
 
@@ -654,6 +740,44 @@ function translated(value: string): string {
   if (replacement === undefined) {
     const update = core.match(/^Update v(.+) is available and will be downloaded in the background\.$/);
     if (update) replacement = `发现新版本 v${update[1]}，将在后台下载。`;
+  }
+
+  if (replacement === undefined && core.includes('Performance Report:')) {
+    replacement = core
+      .replace('Performance Report:', '性能报告：')
+      .replace('- Frame Rate:', '- 帧率：')
+      .replace('- Data Throughput:', '- 数据吞吐量：')
+      .replace('- Avg Data Processing:', '- 平均数据处理耗时：')
+      .replace('- Avg Terminal Render:', '- 平均终端渲染耗时：')
+      .replace('- Avg Graphing Processing:', '- 平均绘图处理耗时：')
+      .replace('- Health Status: Healthy', '- 健康状态：良好')
+      .replace('- Health Status: Degraded', '- 健康状态：欠佳')
+      .replace('- Samples:', '- 样本数：');
+  }
+
+  if (replacement === undefined) {
+    const foundJLink = core.match(/^Found J-Link Commander at (.+)$/);
+    if (foundJLink) replacement = `已找到 J-Link Commander：${foundJLink[1]}`;
+  }
+
+  if (replacement === undefined) {
+    const socketTimeout = core.match(/^The timeout for the socket connection in milliseconds\. If the connection is not established within this time, the attempt will be aborted\. Must be between (\d+) and (\d+) \(inclusive\)\.$/);
+    if (socketTimeout) replacement = `网络套接字连接超时时间（毫秒）。若未在此时间内建立连接，本次尝试将中止；取值必须在 ${socketTimeout[1]} 至 ${socketTimeout[2]} 之间（含端点）。`;
+  }
+
+  if (replacement === undefined) {
+    const rttSpeed = core.match(/^Debug interface clock speed in kHz\. Typical values: 1000-50000\. Must be between (\d+) and (\d+) \(inclusive\)\.$/);
+    if (rttSpeed) replacement = `调试接口时钟频率（kHz），常用值为 1000–50000；取值必须在 ${rttSpeed[1]} 至 ${rttSpeed[2]} 之间（含端点）。`;
+  }
+
+  if (replacement === undefined) {
+    const rttChannel = core.match(/^RTT up\/down channel index \((\d+)-(\d+)\)\. Almost all firmwares use channel 0 \(Terminal\) — leave at 0 unless you know your firmware uses a different RTT channel\.$/);
+    if (rttChannel) replacement = `RTT 上下行通道索引（${rttChannel[1]}–${rttChannel[2]}）。几乎所有固件都使用通道 0（终端）；除非固件明确使用其他通道，否则保持为 0。`;
+  }
+
+  if (replacement === undefined) {
+    const bleDuration = core.match(/^The duration \(in milliseconds\) to scan for Bluetooth LE devices\. After this time, the scan will automatically stop\. You can always stop the scan prior to this timeout by clicking the 'Stop scanning' button\. Must be between (\d+) and (\d+) \(inclusive\)\.$/);
+    if (bleDuration) replacement = `扫描低功耗蓝牙设备的时长（毫秒）。到时会自动停止，也可提前单击“停止扫描”；取值必须在 ${bleDuration[1]} 至 ${bleDuration[2]} 之间（含端点）。`;
   }
 
   return replacement === undefined ? value : `${leading}${replacement}${trailing}`;

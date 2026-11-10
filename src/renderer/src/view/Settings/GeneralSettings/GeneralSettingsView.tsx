@@ -366,7 +366,7 @@ ${'-'.repeat(30)} | ${'-'.repeat(8)} | ${'-'.repeat(8)} | ${'-'.repeat(7)} | ${'
               severity={generalSettings.performanceTestResults.includes('✅ OK') ? "success" : "warning"}
               sx={{ marginBottom: "16px", maxWidth: "100%", overflow: "auto" }}
             >
-              <Typography variant="body2" component="pre" style={{
+              <Typography variant="body2" component="pre" data-i18n-localize="true" style={{
                 whiteSpace: 'pre',
                 fontFamily: 'Consolas, "Courier New", monospace',
                 fontSize: '13px',

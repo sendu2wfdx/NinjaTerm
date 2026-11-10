@@ -100,4 +100,34 @@ describe('Simplified-Chinese UI overlay', () => {
     expect(document.querySelectorAll('span')[0]?.textContent).toBe('名为“Board setup”的预设已存在，将被替换。');
     expect(document.querySelectorAll('span')[1]?.textContent).toBe('已选目录：C:\\logs');
   });
+
+  it('localizes explicitly opted-in preformatted UI reports without touching diagnostics', () => {
+    document.body.innerHTML = `
+      <pre data-i18n-localize="true">Performance Report:
+- Frame Rate: 240.0 fps
+- Health Status: Healthy
+- Samples: 0</pre>
+      <pre>Performance Report:</pre>`;
+    installLocalization();
+
+    const reports = document.querySelectorAll('pre');
+    expect(reports[0]?.textContent).toContain('性能报告：');
+    expect(reports[0]?.textContent).toContain('健康状态：良好');
+    expect(reports[1]?.textContent).toBe('Performance Report:');
+  });
+
+  it('translates connection backend labels and dynamic RTT discovery messages', () => {
+    document.body.innerHTML = `
+      <span>Separate TX/RX terminals</span>
+      <span>Socket Connection Settings</span>
+      <span>First detected serial protocol</span>
+      <span>Found J-Link Commander at C:\\SEGGER\\JLink.exe</span>`;
+    installLocalization();
+
+    const labels = document.querySelectorAll('span');
+    expect(labels[0]?.textContent).toBe('分离发送/接收终端');
+    expect(labels[1]?.textContent).toBe('网络套接字连接设置');
+    expect(labels[2]?.textContent).toBe('首个检测到的串行协议');
+    expect(labels[3]?.textContent).toBe('已找到 J-Link Commander：C:\\SEGGER\\JLink.exe');
+  });
 });
